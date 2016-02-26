@@ -16,6 +16,7 @@ export type IncomingMessage = {
 
 export type ServerResponse = {
   statusCode: number;
+  statusMessage: string;
   getHeader: (name: string) => string;
   setHeader: (name: string, val: string) => void;
   removeHeader: (name: string) => void;

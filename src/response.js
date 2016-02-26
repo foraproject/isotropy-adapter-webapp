@@ -32,6 +32,14 @@ class Response extends EventEmitter {
     this.res.statusCode = code;
   }
 
+  get statusMessage() : string {
+    return this.res.statusMessage;
+  }
+
+  set statusMessage(message: string) : void {
+    this.res.statusMessage = message;
+  }
+
   removeHeader(name: string) {
     this.res.removeHeader(name);
   }

@@ -1,6 +1,6 @@
 /* @flow */
 import { EventEmitter } from "events";
-import type { IncomingMessage, ServerResponse, Server } from "./flow/http";
+import type { IncomingMessage, ServerResponse, Server } from "isotropy-interfaces/node/http";
 
 export type ResponseCtorArgsType = {
   res: ServerResponse,

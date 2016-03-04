@@ -65,13 +65,17 @@ class Response extends EventEmitter {
     }
   }
 
+  pipe(o: any) : void {
+    throw new Error("Not implemented.");
+  }
+
   writeHead(code: number, headers: Object) {
     this.res.writeHead(code, headers);
   }
 
-  end(body: string, encoding?: string, cb?: Function) {
+  end(body?: string, encoding?: string, cb?: Function) {
     if (this._toHtml) {
-      this.body += body;
+      this.body += (typeof body !== "undefined") ? body : "";
       const html = this._toHtml(this.body, this._args);
       this.res.end(html, encoding, cb);
       this.emit("end", html);
